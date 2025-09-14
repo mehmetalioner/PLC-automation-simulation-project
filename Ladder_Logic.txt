@@ -1,0 +1,14 @@
+OB1 (Main):
+|----[ Start ]----[/Stop]----[/E-Stop]----( Conveyor Motor )----|
+
+Sensor Handling:
+|----[ Sensor ]--------------------------( Pusher )------------|
+
+Fault Recovery:
+|----[ E-Stop ]---------------------------------( Reset )------|
+
+DB1:
+- Motor_Status (BOOL)
+- Sensor_Status (BOOL)
+- Pusher_Status (BOOL)
+- Emergency (BOOL)

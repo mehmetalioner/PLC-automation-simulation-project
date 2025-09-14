@@ -1,0 +1,22 @@
+Hot Water Tank Control – Ladder Logic
+Inputs
+
+I0.0 = Start Button
+
+I0.1 = Stop Button
+
+I0.2 = Emergency Stop
+
+I0.3 = Low Level Sensor (tank empty)
+
+I0.4 = High Level Sensor (tank full)
+
+I0.5 = Temperature Sensor (too hot)
+
+Outputs
+
+Q0.0 = Inlet Pump (fills the tank)
+
+Q0.1 = Heater
+
+Q0.2 = Outlet Valve (drains tank)

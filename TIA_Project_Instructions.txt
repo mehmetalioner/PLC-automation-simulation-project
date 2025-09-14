@@ -1,0 +1,51 @@
+Step-by-Step Guide: TIA Portal PLC Project Setup and Testing
+
+1. Create New Project
+- Open TIA Portal.
+- Select "Create new project".
+- Enter project name, e.g., "Quality_Inspector_Test".
+- Click Finish.
+
+2. Add Device
+- Go to Project View → "Add new device".
+- Select CPU (e.g., SIMATIC S7-1200 CPU 1214C).
+- The CPU will be added to the project.
+
+3. Ladder Logic (OB1)
+- Open Program blocks → OB1.
+- Switch to Ladder (LAD) editor.
+- Implement the following logic:
+
+Scenario: Conveyor + Sensor + Motor + Emergency Stop
+
+Inputs/Outputs:
+I0.0 = Start button
+I0.1 = Stop button
+I0.2 = Sensor (material detection)
+I0.3 = Emergency Stop
+Q0.0 = Motor output (conveyor)
+
+Logic:
+Start → Motor runs
+Stop → Motor stops
+Emergency Stop → Motor immediately stops
+Sensor detects material → Motor stops
+
+Ladder Logic:
+Network 1: Motor Start/Stop
+(I0.0 AND NOT I0.1 AND NOT I0.3 AND NOT I0.2) → Q0.0
+
+4. Simulation (PLCSIM)
+- Start Simulation (PLCSIM).
+- Download program to simulated CPU.
+- Switch CPU to RUN mode.
+
+5. Testing
+- Force I0.0 = 1 → Motor Q0.0 turns ON.
+- Force I0.1 = 1 → Motor Q0.0 turns OFF.
+- Force I0.3 = 1 → Motor Q0.0 turns OFF immediately.
+- Force I0.2 = 1 → Motor Q0.0 turns OFF (material detected).
+
+6. Screen Recording
+- Windows: Win + G → Xbox Game Bar → Record.
+- Or use OBS Studio for screen + voice recording.
